@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <form action="/api/products" method="post">
+        <label for="product_name"> Enter product name </label>
+        <input type="text" name="product_name">
+        <label for="description"> Product description</label>
+        <input type="text" name="description">
+        <label for="price"> Product price</label>
+        <input type="number"  name = "price">
+        <button type="submit">Save</button>
+    </form>
+    <div>--------------------------------------------------------------------------------------------------------------------------------------------------</%div>
+    <% for(let i = 0 ;i < products.length ; i ++){ %>
+        <div>
+            <h3> <%= products[i].product_name %><span> <%= products[i].price %> </span></h3>
+            <p> <%= products[i].description %> </p>
+        </div>
+<%  } %>
+</body>
+</html>
